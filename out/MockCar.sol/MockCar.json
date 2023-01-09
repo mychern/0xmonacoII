@@ -1,0 +1,2531 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum Monaco.ActionType",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "Action",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "Idle",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "actionType",
+      "outputs": [
+        {
+          "internalType": "enum Monaco.ActionType",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "amount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "idle",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sayMyName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum Monaco.ActionType",
+          "name": "actionType_",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setAction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "setIdle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract Monaco",
+          "name": "monaco",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "balance",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "speed",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "y",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "shield",
+              "type": "uint32"
+            },
+            {
+              "internalType": "contract ICar",
+              "name": "car",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Monaco.CarData[]",
+          "name": "",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "takeYourTurn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b506002805460ff191660011790556107fb8061002d6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063a494817b1161005b578063a494817b146100d7578063aa8c217c14610107578063e2523a691461011e578063f0cb47be1461015d57600080fd5b8063247492f8146100825780633192164f146100a557806396647448146100c2575b600080fd5b60005461008f9060ff1681565b60405161009c91906105cc565b60405180910390f35b6002546100b29060ff1681565b604051901515815260200161009c565b6100d56100d036600461062c565b610170565b005b6100d5600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055565b61011060015481565b60405190815260200161009c565b604080518082018252600781527f4d6f636b436172000000000000000000000000000000000000000000000000006020820152905161009c9190610701565b6100d561016b36600461076d565b6104f2565b60025460ff16156101b3576040513081527fecd64b370f34bea27a260cc68d9c11e4a7505be15c144c1663ca7474bd3f1d279060200160405180910390a16104ea565b6000805460ff1660048111156101cb576101cb610562565b0361026c576001546040517f361401f4000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff87169063361401f4906024015b6020604051808303816000875af1158015610242573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610266919061079d565b50610476565b600160005460ff16600481111561028557610285610562565b036102e1576001546040517f4e7444c4000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff871690634e7444c490602401610223565b600260005460ff1660048111156102fa576102fa610562565b03610356576001546040517f1c7831bd000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff871690631c7831bd90602401610223565b600360005460ff16600481111561036f5761036f610562565b036103c1578573ffffffffffffffffffffffffffffffffffffffff166302404fcb6040518163ffffffff1660e01b81526004016020604051808303816000875af1158015610242573d6000803e3d6000fd5b600460005460ff1660048111156103da576103da610562565b03610476576001546040517f728313c9000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff87169063728313c9906024016020604051808303816000875af1158015610450573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610474919061079d565b505b6000546001546040517f4f34f5b8a90a4f8ae5487a04d1a3a4a4671919b763d3870ebe370eee79b46edf926104b292309260ff909216916107b6565b60405180910390a16104ea600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055565b505050505050565b600080548391907fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600183600481111561052f5761052f610562565b021790555060015550600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00169055565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b600581106105c8577f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b9052565b602081016105da8284610591565b92915050565b60008083601f8401126105f257600080fd5b50813567ffffffffffffffff81111561060a57600080fd5b6020830191508360208260051b850101111561062557600080fd5b9250929050565b6000806000806000806080878903121561064557600080fd5b863573ffffffffffffffffffffffffffffffffffffffff8116811461066957600080fd5b9550602087013567ffffffffffffffff8082111561068657600080fd5b818901915089601f83011261069a57600080fd5b8135818111156106a957600080fd5b8a602060a0830285010111156106be57600080fd5b6020830197508096505060408901359150808211156106dc57600080fd5b506106e989828a016105e0565b979a9699509497949695606090950135949350505050565b600060208083528351808285015260005b8181101561072e57858101830151858201604001528201610712565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b6000806040838503121561078057600080fd5b82356005811061078f57600080fd5b946020939093013593505050565b6000602082840312156107af57600080fd5b5051919050565b73ffffffffffffffffffffffffffffffffffffffff84168152606081016107e06020830185610591565b82604083015294935050505056fea164736f6c6343000811000a",
+    "sourceMap": "100:1494:25:-:0;;;212:42;;;;;;;;;-1:-1:-1;236:4:25;:11;;-1:-1:-1;;236:11:25;243:4;236:11;;;100:1494;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063a494817b1161005b578063a494817b146100d7578063aa8c217c14610107578063e2523a691461011e578063f0cb47be1461015d57600080fd5b8063247492f8146100825780633192164f146100a557806396647448146100c2575b600080fd5b60005461008f9060ff1681565b60405161009c91906105cc565b60405180910390f35b6002546100b29060ff1681565b604051901515815260200161009c565b6100d56100d036600461062c565b610170565b005b6100d5600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055565b61011060015481565b60405190815260200161009c565b604080518082018252600781527f4d6f636b436172000000000000000000000000000000000000000000000000006020820152905161009c9190610701565b6100d561016b36600461076d565b6104f2565b60025460ff16156101b3576040513081527fecd64b370f34bea27a260cc68d9c11e4a7505be15c144c1663ca7474bd3f1d279060200160405180910390a16104ea565b6000805460ff1660048111156101cb576101cb610562565b0361026c576001546040517f361401f4000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff87169063361401f4906024015b6020604051808303816000875af1158015610242573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610266919061079d565b50610476565b600160005460ff16600481111561028557610285610562565b036102e1576001546040517f4e7444c4000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff871690634e7444c490602401610223565b600260005460ff1660048111156102fa576102fa610562565b03610356576001546040517f1c7831bd000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff871690631c7831bd90602401610223565b600360005460ff16600481111561036f5761036f610562565b036103c1578573ffffffffffffffffffffffffffffffffffffffff166302404fcb6040518163ffffffff1660e01b81526004016020604051808303816000875af1158015610242573d6000803e3d6000fd5b600460005460ff1660048111156103da576103da610562565b03610476576001546040517f728313c9000000000000000000000000000000000000000000000000000000008152600481019190915273ffffffffffffffffffffffffffffffffffffffff87169063728313c9906024016020604051808303816000875af1158015610450573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610474919061079d565b505b6000546001546040517f4f34f5b8a90a4f8ae5487a04d1a3a4a4671919b763d3870ebe370eee79b46edf926104b292309260ff909216916107b6565b60405180910390a16104ea600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055565b505050505050565b600080548391907fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600183600481111561052f5761052f610562565b021790555060015550600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00169055565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b600581106105c8577f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b9052565b602081016105da8284610591565b92915050565b60008083601f8401126105f257600080fd5b50813567ffffffffffffffff81111561060a57600080fd5b6020830191508360208260051b850101111561062557600080fd5b9250929050565b6000806000806000806080878903121561064557600080fd5b863573ffffffffffffffffffffffffffffffffffffffff8116811461066957600080fd5b9550602087013567ffffffffffffffff8082111561068657600080fd5b818901915089601f83011261069a57600080fd5b8135818111156106a957600080fd5b8a602060a0830285010111156106be57600080fd5b6020830197508096505060408901359150808211156106dc57600080fd5b506106e989828a016105e0565b979a9699509497949695606090950135949350505050565b600060208083528351808285015260005b8181101561072e57858101830151858201604001528201610712565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b6000806040838503121561078057600080fd5b82356005811061078f57600080fd5b946020939093013593505050565b6000602082840312156107af57600080fd5b5051919050565b73ffffffffffffffffffffffffffffffffffffffff84168152606081016107e06020830185610591565b82604083015294935050505056fea164736f6c6343000811000a",
+    "sourceMap": "100:1494:25:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;260:35;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;328:16;;;;;;;;;;;;884:14:26;;877:22;859:41;;847:2;832:18;328:16:25;719:187:26;580:914:25;;;;;;:::i;:::-;;:::i;:::-;;520:54;;556:4;:11;;;;563:4;556:11;;;520:54;301:21;;;;;;;;;2677:25:26;;;2665:2;2650:18;301:21:25;2531:177:26;1500:92:25;1569:16;;;;;;;;;;;;;;;;1500:92;;;;1569:16;1500:92;:::i;351:163::-;;;;;;:::i;:::-;;:::i;580:914::-;789:4;;;;785:79;;;814:19;;827:4;3816:74:26;;814:19:25;;3804:2:26;3789:18;814:19:25;;;;;;;847:7;;785:79;891:28;877:10;;;;:42;;;;;;;;:::i;:::-;;874:492;;957:6;;934:30;;;;;;;;2677:25:26;;;;934:22:25;;;;;;2650:18:26;;934:30:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;874:492;;;999:23;985:10;;;;:37;;;;;;;;:::i;:::-;;982:384;;1053:6;;1037:23;;;;;;;;2677:25:26;;;;1037:15:25;;;;;;2650:18:26;;1037:23:25;2531:177:26;982:384:25;1095:29;1081:10;;;;:43;;;;;;;;:::i;:::-;;1078:288;;1160:6;;1139:28;;;;;;;;2677:25:26;;;;1139:20:25;;;;;;2650:18:26;;1139:28:25;2531:177:26;1078:288:25;1201:24;1187:10;;;;:38;;;;;;;;:::i;:::-;;1184:182;;1240:6;:16;;;:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1184:182;1292:24;1278:10;;;;:38;;;;;;;;:::i;:::-;;1275:91;;1348:6;;1331:24;;;;;;;;2677:25:26;;;;1331:16:25;;;;;;2650:18:26;;1331:24:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1275:91;1402:10;;;1413:6;1381:39;;;;;;1396:4;;1402:10;;;;;1381:39;:::i;:::-;;;;;;;;1478:9;556:4;:11;;;;563:4;556:11;;;520:54;1478:9;580:914;;;;;;:::o;351:163::-;435:10;:24;;448:11;;435:10;:24;;;448:11;435:24;;;;;;;;:::i;:::-;;;;;-1:-1:-1;469:6:25;:16;-1:-1:-1;495:4:25;:12;;;;;;351:163::o;14:184:26:-;66:77;63:1;56:88;163:4;160:1;153:15;187:4;184:1;177:15;203:295;285:1;278:5;275:12;265:200;;321:77;318:1;311:88;422:4;419:1;412:15;450:4;447:1;440:15;265:200;474:18;;203:295::o;503:211::-;651:2;636:18;;663:45;640:9;690:6;663:45;:::i;:::-;503:211;;;;:::o;911:367::-;974:8;984:6;1038:3;1031:4;1023:6;1019:17;1015:27;1005:55;;1056:1;1053;1046:12;1005:55;-1:-1:-1;1079:20:26;;1122:18;1111:30;;1108:50;;;1154:1;1151;1144:12;1108:50;1191:4;1183:6;1179:17;1167:29;;1251:3;1244:4;1234:6;1231:1;1227:14;1219:6;1215:27;1211:38;1208:47;1205:67;;;1268:1;1265;1258:12;1205:67;911:367;;;;;:::o;1283:1243::-;1467:6;1475;1483;1491;1499;1507;1560:3;1548:9;1539:7;1535:23;1531:33;1528:53;;;1577:1;1574;1567:12;1528:53;1616:9;1603:23;1666:42;1659:5;1655:54;1648:5;1645:65;1635:93;;1724:1;1721;1714:12;1635:93;1747:5;-1:-1:-1;1803:2:26;1788:18;;1775:32;1826:18;1856:14;;;1853:34;;;1883:1;1880;1873:12;1853:34;1921:6;1910:9;1906:22;1896:32;;1966:7;1959:4;1955:2;1951:13;1947:27;1937:55;;1988:1;1985;1978:12;1937:55;2028:2;2015:16;2054:2;2046:6;2043:14;2040:34;;;2070:1;2067;2060:12;2040:34;2126:7;2121:2;2113:4;2105:6;2101:17;2097:2;2093:26;2089:35;2086:48;2083:68;;;2147:1;2144;2137:12;2083:68;2178:2;2174;2170:11;2160:21;;2200:6;2190:16;;;2259:2;2248:9;2244:18;2231:32;2215:48;;2288:2;2278:8;2275:16;2272:36;;;2304:1;2301;2294:12;2272:36;;2343:72;2407:7;2396:8;2385:9;2381:24;2343:72;:::i;:::-;1283:1243;;;;-1:-1:-1;1283:1243:26;;;;;2516:2;2501:18;;;2488:32;;1283:1243;-1:-1:-1;;;;1283:1243:26:o;2713:607::-;2825:4;2854:2;2883;2872:9;2865:21;2915:6;2909:13;2958:6;2953:2;2942:9;2938:18;2931:34;2983:1;2993:140;3007:6;3004:1;3001:13;2993:140;;;3102:14;;;3098:23;;3092:30;3068:17;;;3087:2;3064:26;3057:66;3022:10;;2993:140;;;2997:3;3182:1;3177:2;3168:6;3157:9;3153:22;3149:31;3142:42;3311:2;3241:66;3236:2;3228:6;3224:15;3220:88;3209:9;3205:104;3201:113;3193:121;;;;2713:607;;;;:::o;3325:340::-;3409:6;3417;3470:2;3458:9;3449:7;3445:23;3441:32;3438:52;;;3486:1;3483;3476:12;3438:52;3525:9;3512:23;3564:1;3557:5;3554:12;3544:40;;3580:1;3577;3570:12;3544:40;3603:5;3655:2;3640:18;;;;3627:32;;-1:-1:-1;;;3325:340:26:o;3901:184::-;3971:6;4024:2;4012:9;4003:7;3999:23;3995:32;3992:52;;;4040:1;4037;4030:12;3992:52;-1:-1:-1;4063:16:26;;3901:184;-1:-1:-1;3901:184:26:o;4090:402::-;4336:42;4324:55;;4306:74;;4294:2;4279:18;;4389:54;4439:2;4424:18;;4416:6;4389:54;:::i;:::-;4479:6;4474:2;4463:9;4459:18;4452:34;4090:402;;;;;;:::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "actionType()": "247492f8",
+    "amount()": "aa8c217c",
+    "idle()": "3192164f",
+    "sayMyName()": "e2523a69",
+    "setAction(uint8,uint256)": "f0cb47be",
+    "setIdle()": "a494817b",
+    "takeYourTurn(address,(uint32,uint32,uint32,uint32,address)[],uint256[],uint256)": "96647448"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum Monaco.ActionType\",\"name\":\"\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"Action\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Idle\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"actionType\",\"outputs\":[{\"internalType\":\"enum Monaco.ActionType\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"amount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"idle\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"sayMyName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enum Monaco.ActionType\",\"name\":\"actionType_\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"amount_\",\"type\":\"uint256\"}],\"name\":\"setAction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"setIdle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract Monaco\",\"name\":\"monaco\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint32\",\"name\":\"balance\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"speed\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"shield\",\"type\":\"uint32\"},{\"internalType\":\"contract ICar\",\"name\":\"car\",\"type\":\"address\"}],\"internalType\":\"struct Monaco.CarData[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"takeYourTurn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/utils/MockCar.sol\":\"MockCar\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/solmate/src/utils/SafeCastLib.sol\":{\"keccak256\":\"0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427\",\"dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk\"]},\"src/Monaco.sol\":{\"keccak256\":\"0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23\",\"dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS\"]},\"src/interfaces/ICar.sol\":{\"keccak256\":\"0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718\",\"dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE\"]},\"src/utils/SignedWadMath.sol\":{\"keccak256\":\"0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77\",\"dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5\"]},\"test/utils/MockCar.sol\":{\"keccak256\":\"0xb63d648344a7255d482e95b92190bb8f1162e74c0f7c24ba4673414df0e9c4bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dfcd12bf9a409c5426d9b914d562d99630d20a058efc609efad7b848e4e90f0\",\"dweb:/ipfs/QmdZSPuZQq3NmsWyk5ZRqZ8ukPx7hD73yfDPUb1CdMRYuX\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "enum Monaco.ActionType",
+              "name": "",
+              "type": "uint8",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Action",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Idle",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "actionType",
+          "outputs": [
+            {
+              "internalType": "enum Monaco.ActionType",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "amount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "idle",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "sayMyName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "enum Monaco.ActionType",
+              "name": "actionType_",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount_",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setAction"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setIdle"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract Monaco",
+              "name": "monaco",
+              "type": "address"
+            },
+            {
+              "internalType": "struct Monaco.CarData[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "balance",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "speed",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "y",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "shield",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "contract ICar",
+                  "name": "car",
+                  "type": "address"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "takeYourTurn"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "test/utils/MockCar.sol": "MockCar"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/solmate/src/utils/SafeCastLib.sol": {
+        "keccak256": "0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab",
+        "urls": [
+          "bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427",
+          "dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk"
+        ],
+        "license": "AGPL-3.0-only"
+      },
+      "src/Monaco.sol": {
+        "keccak256": "0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929",
+        "urls": [
+          "bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23",
+          "dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/ICar.sol": {
+        "keccak256": "0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35",
+        "urls": [
+          "bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718",
+          "dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE"
+        ],
+        "license": "MIT"
+      },
+      "src/utils/SignedWadMath.sol": {
+        "keccak256": "0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72",
+        "urls": [
+          "bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77",
+          "dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5"
+        ],
+        "license": "MIT"
+      },
+      "test/utils/MockCar.sol": {
+        "keccak256": "0xb63d648344a7255d482e95b92190bb8f1162e74c0f7c24ba4673414df0e9c4bc",
+        "urls": [
+          "bzz-raw://3dfcd12bf9a409c5426d9b914d562d99630d20a058efc609efad7b848e4e90f0",
+          "dweb:/ipfs/QmdZSPuZQq3NmsWyk5ZRqZ8ukPx7hD73yfDPUb1CdMRYuX"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "test/utils/MockCar.sol",
+    "id": 31060,
+    "exportedSymbols": {
+      "ICar": [
+        28836
+      ],
+      "MockCar": [
+        31059
+      ],
+      "Monaco": [
+        27478
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1563:25",
+    "nodes": [
+      {
+        "id": 30886,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:25",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 30887,
+        "nodeType": "ImportDirective",
+        "src": "57:41:25",
+        "nodes": [],
+        "absolutePath": "src/interfaces/ICar.sol",
+        "file": "./../../src/interfaces/ICar.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 31060,
+        "sourceUnit": 28837,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 31059,
+        "nodeType": "ContractDefinition",
+        "src": "100:1494:25",
+        "nodes": [
+          {
+            "id": 30893,
+            "nodeType": "EventDefinition",
+            "src": "131:20:25",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "ecd64b370f34bea27a260cc68d9c11e4a7505be15c144c1663ca7474bd3f1d27",
+            "name": "Idle",
+            "nameLocation": "137:4:25",
+            "parameters": {
+              "id": 30892,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30891,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30893,
+                  "src": "142:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30890,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "142:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "141:9:25"
+            }
+          },
+          {
+            "id": 30902,
+            "nodeType": "EventDefinition",
+            "src": "156:50:25",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "4f34f5b8a90a4f8ae5487a04d1a3a4a4671919b763d3870ebe370eee79b46edf",
+            "name": "Action",
+            "nameLocation": "162:6:25",
+            "parameters": {
+              "id": 30901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30895,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30902,
+                  "src": "169:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30894,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "169:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30898,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30902,
+                  "src": "178:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ActionType_$25972",
+                    "typeString": "enum Monaco.ActionType"
+                  },
+                  "typeName": {
+                    "id": 30897,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 30896,
+                      "name": "Monaco.ActionType",
+                      "nameLocations": [
+                        "178:6:25",
+                        "185:10:25"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 25972,
+                      "src": "178:17:25"
+                    },
+                    "referencedDeclaration": 25972,
+                    "src": "178:17:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ActionType_$25972",
+                      "typeString": "enum Monaco.ActionType"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30900,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30902,
+                  "src": "197:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 30899,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "197:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "168:37:25"
+            }
+          },
+          {
+            "id": 30910,
+            "nodeType": "FunctionDefinition",
+            "src": "212:42:25",
+            "nodes": [],
+            "body": {
+              "id": 30909,
+              "nodeType": "Block",
+              "src": "226:28:25",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 30907,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 30905,
+                      "name": "idle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30917,
+                      "src": "236:4:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 30906,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "243:4:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "236:11:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 30908,
+                  "nodeType": "ExpressionStatement",
+                  "src": "236:11:25"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 30903,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "223:2:25"
+            },
+            "returnParameters": {
+              "id": 30904,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "226:0:25"
+            },
+            "scope": 31059,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 30913,
+            "nodeType": "VariableDeclaration",
+            "src": "260:35:25",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "247492f8",
+            "mutability": "mutable",
+            "name": "actionType",
+            "nameLocation": "285:10:25",
+            "scope": 31059,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_ActionType_$25972",
+              "typeString": "enum Monaco.ActionType"
+            },
+            "typeName": {
+              "id": 30912,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 30911,
+                "name": "Monaco.ActionType",
+                "nameLocations": [
+                  "260:6:25",
+                  "267:10:25"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 25972,
+                "src": "260:17:25"
+              },
+              "referencedDeclaration": 25972,
+              "src": "260:17:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_ActionType_$25972",
+                "typeString": "enum Monaco.ActionType"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 30915,
+            "nodeType": "VariableDeclaration",
+            "src": "301:21:25",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "aa8c217c",
+            "mutability": "mutable",
+            "name": "amount",
+            "nameLocation": "316:6:25",
+            "scope": 31059,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 30914,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "301:7:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 30917,
+            "nodeType": "VariableDeclaration",
+            "src": "328:16:25",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "3192164f",
+            "mutability": "mutable",
+            "name": "idle",
+            "nameLocation": "340:4:25",
+            "scope": 31059,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 30916,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "328:4:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 30938,
+            "nodeType": "FunctionDefinition",
+            "src": "351:163:25",
+            "nodes": [],
+            "body": {
+              "id": 30937,
+              "nodeType": "Block",
+              "src": "425:89:25",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 30927,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 30925,
+                      "name": "actionType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30913,
+                      "src": "435:10:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ActionType_$25972",
+                        "typeString": "enum Monaco.ActionType"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 30926,
+                      "name": "actionType_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30920,
+                      "src": "448:11:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ActionType_$25972",
+                        "typeString": "enum Monaco.ActionType"
+                      }
+                    },
+                    "src": "435:24:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ActionType_$25972",
+                      "typeString": "enum Monaco.ActionType"
+                    }
+                  },
+                  "id": 30928,
+                  "nodeType": "ExpressionStatement",
+                  "src": "435:24:25"
+                },
+                {
+                  "expression": {
+                    "id": 30931,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 30929,
+                      "name": "amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30915,
+                      "src": "469:6:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 30930,
+                      "name": "amount_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30922,
+                      "src": "478:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "469:16:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 30932,
+                  "nodeType": "ExpressionStatement",
+                  "src": "469:16:25"
+                },
+                {
+                  "expression": {
+                    "id": 30935,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 30933,
+                      "name": "idle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30917,
+                      "src": "495:4:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "66616c7365",
+                      "id": 30934,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "502:5:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "495:12:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 30936,
+                  "nodeType": "ExpressionStatement",
+                  "src": "495:12:25"
+                }
+              ]
+            },
+            "functionSelector": "f0cb47be",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAction",
+            "nameLocation": "360:9:25",
+            "parameters": {
+              "id": 30923,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30920,
+                  "mutability": "mutable",
+                  "name": "actionType_",
+                  "nameLocation": "388:11:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30938,
+                  "src": "370:29:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ActionType_$25972",
+                    "typeString": "enum Monaco.ActionType"
+                  },
+                  "typeName": {
+                    "id": 30919,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 30918,
+                      "name": "Monaco.ActionType",
+                      "nameLocations": [
+                        "370:6:25",
+                        "377:10:25"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 25972,
+                      "src": "370:17:25"
+                    },
+                    "referencedDeclaration": 25972,
+                    "src": "370:17:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ActionType_$25972",
+                      "typeString": "enum Monaco.ActionType"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30922,
+                  "mutability": "mutable",
+                  "name": "amount_",
+                  "nameLocation": "409:7:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 30938,
+                  "src": "401:15:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 30921,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "401:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:48:25"
+            },
+            "returnParameters": {
+              "id": 30924,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "425:0:25"
+            },
+            "scope": 31059,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 30946,
+            "nodeType": "FunctionDefinition",
+            "src": "520:54:25",
+            "nodes": [],
+            "body": {
+              "id": 30945,
+              "nodeType": "Block",
+              "src": "546:28:25",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 30943,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 30941,
+                      "name": "idle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30917,
+                      "src": "556:4:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 30942,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "563:4:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "556:11:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 30944,
+                  "nodeType": "ExpressionStatement",
+                  "src": "556:11:25"
+                }
+              ]
+            },
+            "functionSelector": "a494817b",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setIdle",
+            "nameLocation": "529:7:25",
+            "parameters": {
+              "id": 30939,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "536:2:25"
+            },
+            "returnParameters": {
+              "id": 30940,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "546:0:25"
+            },
+            "scope": 31059,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 31050,
+            "nodeType": "FunctionDefinition",
+            "src": "580:914:25",
+            "nodes": [],
+            "body": {
+              "id": 31049,
+              "nodeType": "Block",
+              "src": "731:763:25",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "id": 30962,
+                    "name": "idle",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 30917,
+                    "src": "789:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 30972,
+                  "nodeType": "IfStatement",
+                  "src": "785:79:25",
+                  "trueBody": {
+                    "id": 30971,
+                    "nodeType": "Block",
+                    "src": "795:69:25",
+                    "statements": [
+                      {
+                        "eventCall": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "id": 30966,
+                                  "name": "this",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": -28,
+                                  "src": "827:4:25",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_MockCar_$31059",
+                                    "typeString": "contract MockCar"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_contract$_MockCar_$31059",
+                                    "typeString": "contract MockCar"
+                                  }
+                                ],
+                                "id": 30965,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "819:7:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_address_$",
+                                  "typeString": "type(address)"
+                                },
+                                "typeName": {
+                                  "id": 30964,
+                                  "name": "address",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "819:7:25",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 30967,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "819:13:25",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 30963,
+                            "name": "Idle",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 30893,
+                            "src": "814:4:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 30968,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "814:19:25",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 30969,
+                        "nodeType": "EmitStatement",
+                        "src": "809:24:25"
+                      },
+                      {
+                        "functionReturnParameters": 30961,
+                        "id": 30970,
+                        "nodeType": "Return",
+                        "src": "847:7:25"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ActionType_$25972",
+                      "typeString": "enum Monaco.ActionType"
+                    },
+                    "id": 30977,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 30973,
+                      "name": "actionType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30913,
+                      "src": "877:10:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ActionType_$25972",
+                        "typeString": "enum Monaco.ActionType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "expression": {
+                        "expression": {
+                          "id": 30974,
+                          "name": "Monaco",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27478,
+                          "src": "891:6:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Monaco_$27478_$",
+                            "typeString": "type(contract Monaco)"
+                          }
+                        },
+                        "id": 30975,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "898:10:25",
+                        "memberName": "ActionType",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 25972,
+                        "src": "891:17:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ActionType_$25972_$",
+                          "typeString": "type(enum Monaco.ActionType)"
+                        }
+                      },
+                      "id": 30976,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberLocation": "909:10:25",
+                      "memberName": "ACCELERATE",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 25967,
+                      "src": "891:28:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ActionType_$25972",
+                        "typeString": "enum Monaco.ActionType"
+                      }
+                    },
+                    "src": "877:42:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "commonType": {
+                        "typeIdentifier": "t_enum$_ActionType_$25972",
+                        "typeString": "enum Monaco.ActionType"
+                      },
+                      "id": 30989,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "id": 30985,
+                        "name": "actionType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30913,
+                        "src": "985:10:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_ActionType_$25972",
+                          "typeString": "enum Monaco.ActionType"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "expression": {
+                          "expression": {
+                            "id": 30986,
+                            "name": "Monaco",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 27478,
+                            "src": "999:6:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Monaco_$27478_$",
+                              "typeString": "type(contract Monaco)"
+                            }
+                          },
+                          "id": 30987,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1006:10:25",
+                          "memberName": "ActionType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 25972,
+                          "src": "999:17:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_ActionType_$25972_$",
+                            "typeString": "type(enum Monaco.ActionType)"
+                          }
+                        },
+                        "id": 30988,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberLocation": "1017:5:25",
+                        "memberName": "SHELL",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 25968,
+                        "src": "999:23:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_ActionType_$25972",
+                          "typeString": "enum Monaco.ActionType"
+                        }
+                      },
+                      "src": "985:37:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "condition": {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_ActionType_$25972",
+                          "typeString": "enum Monaco.ActionType"
+                        },
+                        "id": 31001,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 30997,
+                          "name": "actionType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30913,
+                          "src": "1081:10:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_ActionType_$25972",
+                            "typeString": "enum Monaco.ActionType"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "expression": {
+                              "id": 30998,
+                              "name": "Monaco",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 27478,
+                              "src": "1095:6:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Monaco_$27478_$",
+                                "typeString": "type(contract Monaco)"
+                              }
+                            },
+                            "id": 30999,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1102:10:25",
+                            "memberName": "ActionType",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 25972,
+                            "src": "1095:17:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_ActionType_$25972_$",
+                              "typeString": "type(enum Monaco.ActionType)"
+                            }
+                          },
+                          "id": 31000,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberLocation": "1113:11:25",
+                          "memberName": "SUPER_SHELL",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 25969,
+                          "src": "1095:29:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_ActionType_$25972",
+                            "typeString": "enum Monaco.ActionType"
+                          }
+                        },
+                        "src": "1081:43:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "falseBody": {
+                        "condition": {
+                          "commonType": {
+                            "typeIdentifier": "t_enum$_ActionType_$25972",
+                            "typeString": "enum Monaco.ActionType"
+                          },
+                          "id": 31013,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 31009,
+                            "name": "actionType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 30913,
+                            "src": "1187:10:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_ActionType_$25972",
+                              "typeString": "enum Monaco.ActionType"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "expression": {
+                              "expression": {
+                                "id": 31010,
+                                "name": "Monaco",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 27478,
+                                "src": "1201:6:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Monaco_$27478_$",
+                                  "typeString": "type(contract Monaco)"
+                                }
+                              },
+                              "id": 31011,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1208:10:25",
+                              "memberName": "ActionType",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 25972,
+                              "src": "1201:17:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_ActionType_$25972_$",
+                                "typeString": "type(enum Monaco.ActionType)"
+                              }
+                            },
+                            "id": 31012,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberLocation": "1219:6:25",
+                            "memberName": "BANANA",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 25970,
+                            "src": "1201:24:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_ActionType_$25972",
+                              "typeString": "enum Monaco.ActionType"
+                            }
+                          },
+                          "src": "1187:38:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": {
+                          "condition": {
+                            "commonType": {
+                              "typeIdentifier": "t_enum$_ActionType_$25972",
+                              "typeString": "enum Monaco.ActionType"
+                            },
+                            "id": 31024,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 31020,
+                              "name": "actionType",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 30913,
+                              "src": "1278:10:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_ActionType_$25972",
+                                "typeString": "enum Monaco.ActionType"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "==",
+                            "rightExpression": {
+                              "expression": {
+                                "expression": {
+                                  "id": 31021,
+                                  "name": "Monaco",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 27478,
+                                  "src": "1292:6:25",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Monaco_$27478_$",
+                                    "typeString": "type(contract Monaco)"
+                                  }
+                                },
+                                "id": 31022,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "1299:10:25",
+                                "memberName": "ActionType",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 25972,
+                                "src": "1292:17:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_ActionType_$25972_$",
+                                  "typeString": "type(enum Monaco.ActionType)"
+                                }
+                              },
+                              "id": 31023,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberLocation": "1310:6:25",
+                              "memberName": "SHIELD",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 25971,
+                              "src": "1292:24:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_ActionType_$25972",
+                                "typeString": "enum Monaco.ActionType"
+                              }
+                            },
+                            "src": "1278:38:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "id": 31032,
+                          "nodeType": "IfStatement",
+                          "src": "1275:91:25",
+                          "trueBody": {
+                            "id": 31031,
+                            "nodeType": "Block",
+                            "src": "1317:49:25",
+                            "statements": [
+                              {
+                                "expression": {
+                                  "arguments": [
+                                    {
+                                      "id": 31028,
+                                      "name": "amount",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 30915,
+                                      "src": "1348:6:25",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    }
+                                  ],
+                                  "expression": {
+                                    "argumentTypes": [
+                                      {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    ],
+                                    "expression": {
+                                      "id": 31025,
+                                      "name": "monaco",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 30949,
+                                      "src": "1331:6:25",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_contract$_Monaco_$27478",
+                                        "typeString": "contract Monaco"
+                                      }
+                                    },
+                                    "id": 31027,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberLocation": "1338:9:25",
+                                    "memberName": "buyShield",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 26961,
+                                    "src": "1331:16:25",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                      "typeString": "function (uint256) external returns (uint256)"
+                                    }
+                                  },
+                                  "id": 31029,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "kind": "functionCall",
+                                  "lValueRequested": false,
+                                  "nameLocations": [],
+                                  "names": [],
+                                  "nodeType": "FunctionCall",
+                                  "src": "1331:24:25",
+                                  "tryCall": false,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "id": 31030,
+                                "nodeType": "ExpressionStatement",
+                                "src": "1331:24:25"
+                              }
+                            ]
+                          }
+                        },
+                        "id": 31033,
+                        "nodeType": "IfStatement",
+                        "src": "1184:182:25",
+                        "trueBody": {
+                          "id": 31019,
+                          "nodeType": "Block",
+                          "src": "1226:43:25",
+                          "statements": [
+                            {
+                              "expression": {
+                                "arguments": [],
+                                "expression": {
+                                  "argumentTypes": [],
+                                  "expression": {
+                                    "id": 31014,
+                                    "name": "monaco",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 30949,
+                                    "src": "1240:6:25",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_Monaco_$27478",
+                                      "typeString": "contract Monaco"
+                                    }
+                                  },
+                                  "id": 31016,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "1247:9:25",
+                                  "memberName": "buyBanana",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 26896,
+                                  "src": "1240:16:25",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
+                                    "typeString": "function () external returns (uint256)"
+                                  }
+                                },
+                                "id": 31017,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "nameLocations": [],
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "1240:18:25",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 31018,
+                              "nodeType": "ExpressionStatement",
+                              "src": "1240:18:25"
+                            }
+                          ]
+                        }
+                      },
+                      "id": 31034,
+                      "nodeType": "IfStatement",
+                      "src": "1078:288:25",
+                      "trueBody": {
+                        "id": 31008,
+                        "nodeType": "Block",
+                        "src": "1125:53:25",
+                        "statements": [
+                          {
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 31005,
+                                  "name": "amount",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 30915,
+                                  "src": "1160:6:25",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                ],
+                                "expression": {
+                                  "id": 31002,
+                                  "name": "monaco",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 30949,
+                                  "src": "1139:6:25",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Monaco_$27478",
+                                    "typeString": "contract Monaco"
+                                  }
+                                },
+                                "id": 31004,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "1146:13:25",
+                                "memberName": "buySuperShell",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 26835,
+                                "src": "1139:20:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                  "typeString": "function (uint256) external returns (uint256)"
+                                }
+                              },
+                              "id": 31006,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "1139:28:25",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 31007,
+                            "nodeType": "ExpressionStatement",
+                            "src": "1139:28:25"
+                          }
+                        ]
+                      }
+                    },
+                    "id": 31035,
+                    "nodeType": "IfStatement",
+                    "src": "982:384:25",
+                    "trueBody": {
+                      "id": 30996,
+                      "nodeType": "Block",
+                      "src": "1023:48:25",
+                      "statements": [
+                        {
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 30993,
+                                "name": "amount",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 30915,
+                                "src": "1053:6:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 30990,
+                                "name": "monaco",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 30949,
+                                "src": "1037:6:25",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Monaco_$27478",
+                                  "typeString": "contract Monaco"
+                                }
+                              },
+                              "id": 30992,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1044:8:25",
+                              "memberName": "buyShell",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 26689,
+                              "src": "1037:15:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                "typeString": "function (uint256) external returns (uint256)"
+                              }
+                            },
+                            "id": 30994,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1037:23:25",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 30995,
+                          "nodeType": "ExpressionStatement",
+                          "src": "1037:23:25"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 31036,
+                  "nodeType": "IfStatement",
+                  "src": "874:492:25",
+                  "trueBody": {
+                    "id": 30984,
+                    "nodeType": "Block",
+                    "src": "920:55:25",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 30981,
+                              "name": "amount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 30915,
+                              "src": "957:6:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "id": 30978,
+                              "name": "monaco",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 30949,
+                              "src": "934:6:25",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Monaco_$27478",
+                                "typeString": "contract Monaco"
+                              }
+                            },
+                            "id": 30980,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "941:15:25",
+                            "memberName": "buyAcceleration",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 26457,
+                            "src": "934:22:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                              "typeString": "function (uint256) external returns (uint256)"
+                            }
+                          },
+                          "id": 30982,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "934:30:25",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 30983,
+                        "nodeType": "ExpressionStatement",
+                        "src": "934:30:25"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 31040,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "1396:4:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_MockCar_$31059",
+                              "typeString": "contract MockCar"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_MockCar_$31059",
+                              "typeString": "contract MockCar"
+                            }
+                          ],
+                          "id": 31039,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1388:7:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 31038,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1388:7:25",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 31041,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1388:13:25",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 31042,
+                        "name": "actionType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30913,
+                        "src": "1402:10:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_ActionType_$25972",
+                          "typeString": "enum Monaco.ActionType"
+                        }
+                      },
+                      {
+                        "id": 31043,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30915,
+                        "src": "1413:6:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_ActionType_$25972",
+                          "typeString": "enum Monaco.ActionType"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 31037,
+                      "name": "Action",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30902,
+                      "src": "1381:6:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_enum$_ActionType_$25972_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,enum Monaco.ActionType,uint256)"
+                      }
+                    },
+                    "id": 31044,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1381:39:25",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 31045,
+                  "nodeType": "EmitStatement",
+                  "src": "1376:44:25"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 31046,
+                      "name": "setIdle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30946,
+                      "src": "1478:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 31047,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1478:9:25",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 31048,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1478:9:25"
+                }
+              ]
+            },
+            "baseFunctions": [
+              28835
+            ],
+            "functionSelector": "96647448",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "takeYourTurn",
+            "nameLocation": "589:12:25",
+            "overrides": {
+              "id": 30960,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "722:8:25"
+            },
+            "parameters": {
+              "id": 30959,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30949,
+                  "mutability": "mutable",
+                  "name": "monaco",
+                  "nameLocation": "609:6:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31050,
+                  "src": "602:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Monaco_$27478",
+                    "typeString": "contract Monaco"
+                  },
+                  "typeName": {
+                    "id": 30948,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 30947,
+                      "name": "Monaco",
+                      "nameLocations": [
+                        "602:6:25"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 27478,
+                      "src": "602:6:25"
+                    },
+                    "referencedDeclaration": 27478,
+                    "src": "602:6:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Monaco_$27478",
+                      "typeString": "contract Monaco"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30953,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31050,
+                  "src": "617:25:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct Monaco.CarData[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 30951,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 30950,
+                        "name": "Monaco.CarData",
+                        "nameLocations": [
+                          "617:6:25",
+                          "624:7:25"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 25989,
+                        "src": "617:14:25"
+                      },
+                      "referencedDeclaration": 25989,
+                      "src": "617:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CarData_$25989_storage_ptr",
+                        "typeString": "struct Monaco.CarData"
+                      }
+                    },
+                    "id": 30952,
+                    "nodeType": "ArrayTypeName",
+                    "src": "617:16:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_CarData_$25989_storage_$dyn_storage_ptr",
+                      "typeString": "struct Monaco.CarData[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30956,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31050,
+                  "src": "656:18:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 30954,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "656:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 30955,
+                    "nodeType": "ArrayTypeName",
+                    "src": "656:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30958,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31050,
+                  "src": "688:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 30957,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "688:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "601:111:25"
+            },
+            "returnParameters": {
+              "id": 30961,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "731:0:25"
+            },
+            "scope": 31059,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 31058,
+            "nodeType": "FunctionDefinition",
+            "src": "1500:92:25",
+            "nodes": [],
+            "body": {
+              "id": 31057,
+              "nodeType": "Block",
+              "src": "1559:33:25",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "4d6f636b436172",
+                    "id": 31055,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1576:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_8a877f15cb83163b6356c9989ae61303c89dea4031a836f68f06384c9db61c04",
+                      "typeString": "literal_string \"MockCar\""
+                    },
+                    "value": "MockCar"
+                  },
+                  "functionReturnParameters": 31054,
+                  "id": 31056,
+                  "nodeType": "Return",
+                  "src": "1569:16:25"
+                }
+              ]
+            },
+            "baseFunctions": [
+              28820
+            ],
+            "functionSelector": "e2523a69",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sayMyName",
+            "nameLocation": "1509:9:25",
+            "parameters": {
+              "id": 31051,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1518:2:25"
+            },
+            "returnParameters": {
+              "id": 31054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31053,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31058,
+                  "src": "1544:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31052,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1544:6:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1543:15:25"
+            },
+            "scope": 31059,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 30888,
+              "name": "ICar",
+              "nameLocations": [
+                "120:4:25"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 28836,
+              "src": "120:4:25"
+            },
+            "id": 30889,
+            "nodeType": "InheritanceSpecifier",
+            "src": "120:4:25"
+          }
+        ],
+        "canonicalName": "MockCar",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          31059,
+          28836
+        ],
+        "name": "MockCar",
+        "nameLocation": "109:7:25",
+        "scope": 31060,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 25
+}

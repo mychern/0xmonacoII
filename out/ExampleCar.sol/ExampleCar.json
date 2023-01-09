@@ -1,0 +1,2030 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "sayMyName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract Monaco",
+          "name": "monaco",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "balance",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "speed",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "y",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "shield",
+              "type": "uint32"
+            },
+            {
+              "internalType": "contract ICar",
+              "name": "car",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Monaco.CarData[]",
+          "name": "allCars",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ourCarIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "takeYourTurn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5061095a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063966474481461003b578063e2523a6914610050575b600080fd5b61004e61004936600461066c565b610098565b005b604080518082018252600a81527f4578616d706c65436172000000000000000000000000000000000000000000006020820152905161008f9190610728565b60405180910390f35b60008585838181106100ac576100ac610794565b905060a002018036038101906100c291906107dc565b6040517f503a69820000000000000000000000000000000000000000000000000000000081526003600482015290915073ffffffffffffffffffffffffffffffffffffffff88169063503a698290602401602060405180830381865afa158015610130573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101549190610893565b815163ffffffff161115610213576040517f361401f40000000000000000000000000000000000000000000000000000000081526003600482015273ffffffffffffffffffffffffffffffffffffffff88169063361401f4906024016020604051808303816000875af11580156101cf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101f39190610893565b62ffffff168160000181815161020991906108db565b63ffffffff169052505b8461021f8360016108ff565b1480156102c057506040517f647ba7950000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff88169063647ba79590602401602060405180830381865afa158015610292573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b69190610893565b815163ffffffff16115b1561035d576040517f1c7831bd0000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690631c7831bd906024015b6020604051808303816000875af1158015610333573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103579190610893565b506105f2565b81158015906103ae5750602081015163ffffffff16868661037f600186610918565b81811061038e5761038e610794565b905060a0020160200160208101906103a6919061092b565b63ffffffff16115b801561044e57506040517f54192e410000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff8816906354192e4190602401602060405180830381865afa158015610420573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104449190610893565b815163ffffffff16115b156104a6576040517f4e7444c40000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690634e7444c490602401610314565b806060015163ffffffff166000036105f2578115801561055a57506040517f597869660000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690635978696690602401602060405180830381865afa15801561052c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105509190610893565b815163ffffffff16115b156105f2576040517f728313c90000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff88169063728313c9906024016020604051808303816000875af11580156105cc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f09190610893565b505b50505050505050565b73ffffffffffffffffffffffffffffffffffffffff8116811461061d57600080fd5b50565b60008083601f84011261063257600080fd5b50813567ffffffffffffffff81111561064a57600080fd5b6020830191508360208260051b850101111561066557600080fd5b9250929050565b6000806000806000806080878903121561068557600080fd5b8635610690816105fb565b9550602087013567ffffffffffffffff808211156106ad57600080fd5b818901915089601f8301126106c157600080fd5b8135818111156106d057600080fd5b8a602060a0830285010111156106e557600080fd5b60208301975080965050604089013591508082111561070357600080fd5b5061071089828a01610620565b979a9699509497949695606090950135949350505050565b600060208083528351808285015260005b8181101561075557858101830151858201604001528201610739565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b803563ffffffff811681146107d757600080fd5b919050565b600060a082840312156107ee57600080fd5b60405160a0810181811067ffffffffffffffff82111715610838577f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604052610844836107c3565b8152610852602084016107c3565b6020820152610863604084016107c3565b6040820152610874606084016107c3565b60608201526080830135610887816105fb565b60808201529392505050565b6000602082840312156108a557600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b63ffffffff8281168282160390808211156108f8576108f86108ac565b5092915050565b80820180821115610912576109126108ac565b92915050565b81810381811115610912576109126108ac565b60006020828403121561093d57600080fd5b610946826107c3565b939250505056fea164736f6c6343000811000a",
+    "sourceMap": "93:1425:18:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063966474481461003b578063e2523a6914610050575b600080fd5b61004e61004936600461066c565b610098565b005b604080518082018252600a81527f4578616d706c65436172000000000000000000000000000000000000000000006020820152905161008f9190610728565b60405180910390f35b60008585838181106100ac576100ac610794565b905060a002018036038101906100c291906107dc565b6040517f503a69820000000000000000000000000000000000000000000000000000000081526003600482015290915073ffffffffffffffffffffffffffffffffffffffff88169063503a698290602401602060405180830381865afa158015610130573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101549190610893565b815163ffffffff161115610213576040517f361401f40000000000000000000000000000000000000000000000000000000081526003600482015273ffffffffffffffffffffffffffffffffffffffff88169063361401f4906024016020604051808303816000875af11580156101cf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101f39190610893565b62ffffff168160000181815161020991906108db565b63ffffffff169052505b8461021f8360016108ff565b1480156102c057506040517f647ba7950000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff88169063647ba79590602401602060405180830381865afa158015610292573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b69190610893565b815163ffffffff16115b1561035d576040517f1c7831bd0000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690631c7831bd906024015b6020604051808303816000875af1158015610333573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103579190610893565b506105f2565b81158015906103ae5750602081015163ffffffff16868661037f600186610918565b81811061038e5761038e610794565b905060a0020160200160208101906103a6919061092b565b63ffffffff16115b801561044e57506040517f54192e410000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff8816906354192e4190602401602060405180830381865afa158015610420573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104449190610893565b815163ffffffff16115b156104a6576040517f4e7444c40000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690634e7444c490602401610314565b806060015163ffffffff166000036105f2578115801561055a57506040517f597869660000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff881690635978696690602401602060405180830381865afa15801561052c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105509190610893565b815163ffffffff16115b156105f2576040517f728313c90000000000000000000000000000000000000000000000000000000081526001600482015273ffffffffffffffffffffffffffffffffffffffff88169063728313c9906024016020604051808303816000875af11580156105cc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f09190610893565b505b50505050505050565b73ffffffffffffffffffffffffffffffffffffffff8116811461061d57600080fd5b50565b60008083601f84011261063257600080fd5b50813567ffffffffffffffff81111561064a57600080fd5b6020830191508360208260051b850101111561066557600080fd5b9250929050565b6000806000806000806080878903121561068557600080fd5b8635610690816105fb565b9550602087013567ffffffffffffffff808211156106ad57600080fd5b818901915089601f8301126106c157600080fd5b8135818111156106d057600080fd5b8a602060a0830285010111156106e557600080fd5b60208301975080965050604089013591508082111561070357600080fd5b5061071089828a01610620565b979a9699509497949695606090950135949350505050565b600060208083528351808285015260005b8181101561075557858101830151858201604001528201610739565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b803563ffffffff811681146107d757600080fd5b919050565b600060a082840312156107ee57600080fd5b60405160a0810181811067ffffffffffffffff82111715610838577f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604052610844836107c3565b8152610852602084016107c3565b6020820152610863604084016107c3565b6040820152610874606084016107c3565b60608201526080830135610887816105fb565b60808201529392505050565b6000602082840312156108a557600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b63ffffffff8281168282160390808211156108f8576108f86108ac565b5092915050565b80820180821115610912576109126108ac565b92915050565b81810381811115610912576109126108ac565b60006020828403121561093d57600080fd5b610946826107c3565b939250505056fea164736f6c6343000811000a",
+    "sourceMap": "93:1425:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:1288;;;;;;:::i;:::-;;:::i;:::-;;1421:95;1490:19;;;;;;;;;;;;;;;;1421:95;;;;1490:19;1421:95;:::i;:::-;;;;;;;;127:1288;280:28;311:7;;319:11;311:20;;;;;;;:::i;:::-;;;;;;280:51;;;;;;;;;;:::i;:::-;427:27;;;;;452:1;427:27;;;3831:25:26;280:51:18;;-1:-1:-1;427:24:18;;;;;;3804:18:26;;427:27:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;410:14;;:44;;;406:101;;;481:25;;;;;504:1;481:25;;;3831::26;481:22:18;;;;;;3804:18:26;;481:25:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;456:51;;:6;:14;;:51;;;;;;;:::i;:::-;;;;;-1:-1:-1;406:101:18;540:7;521:15;:11;535:1;521:15;:::i;:::-;:33;:81;;;;-1:-1:-1;575:27:18;;;;;600:1;575:27;;;3831:25:26;575:24:18;;;;;;3804:18:26;;575:27:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;558:14;;:44;;;521:81;518:891;;;689:23;;;;;710:1;689:23;;;3831:25:26;689:20:18;;;;;;3804:18:26;;689:23:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;518:891;;;794:16;;;;;:65;;-1:-1:-1;847:12:18;;;;814:45;;:7;;822:15;836:1;822:11;:15;:::i;:::-;814:24;;;;;;;:::i;:::-;;;;;;:30;;;;;;;;;;:::i;:::-;:45;;;794:65;:108;;;;-1:-1:-1;880:22:18;;;;;900:1;880:22;;;3831:25:26;880:19:18;;;;;;3804:18:26;;880:22:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;863:14;;:39;;;794:108;790:619;;;1041:18;;;;;1057:1;1041:18;;;3831:25:26;1041:15:18;;;;;;3804:18:26;;1041::18;3677:185:26;790:619:18;1143:6;:13;;;:18;;1160:1;1143:18;1139:270;;1286:16;;:60;;;;-1:-1:-1;1323:23:18;;;;;1344:1;1323:23;;;3831:25:26;1323:20:18;;;;;;3804:18:26;;1323:23:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1306:14;;:40;;;1286:60;1282:117;;;1365:19;;;;;1382:1;1365:19;;;3831:25:26;1365:16:18;;;;;;3804:18:26;;1365:19:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1282:117;270:1145;127:1288;;;;;;:::o;14:162:26:-;108:42;101:5;97:54;90:5;87:65;77:93;;166:1;163;156:12;77:93;14:162;:::o;181:367::-;244:8;254:6;308:3;301:4;293:6;289:17;285:27;275:55;;326:1;323;316:12;275:55;-1:-1:-1;349:20:26;;392:18;381:30;;378:50;;;424:1;421;414:12;378:50;461:4;453:6;449:17;437:29;;521:3;514:4;504:6;501:1;497:14;489:6;485:27;481:38;478:47;475:67;;;538:1;535;528:12;475:67;181:367;;;;;:::o;553:1189::-;737:6;745;753;761;769;777;830:3;818:9;809:7;805:23;801:33;798:53;;;847:1;844;837:12;798:53;886:9;873:23;905:39;938:5;905:39;:::i;:::-;963:5;-1:-1:-1;1019:2:26;1004:18;;991:32;1042:18;1072:14;;;1069:34;;;1099:1;1096;1089:12;1069:34;1137:6;1126:9;1122:22;1112:32;;1182:7;1175:4;1171:2;1167:13;1163:27;1153:55;;1204:1;1201;1194:12;1153:55;1244:2;1231:16;1270:2;1262:6;1259:14;1256:34;;;1286:1;1283;1276:12;1256:34;1342:7;1337:2;1329:4;1321:6;1317:17;1313:2;1309:26;1305:35;1302:48;1299:68;;;1363:1;1360;1353:12;1299:68;1394:2;1390;1386:11;1376:21;;1416:6;1406:16;;;1475:2;1464:9;1460:18;1447:32;1431:48;;1504:2;1494:8;1491:16;1488:36;;;1520:1;1517;1510:12;1488:36;;1559:72;1623:7;1612:8;1601:9;1597:24;1559:72;:::i;:::-;553:1189;;;;-1:-1:-1;553:1189:26;;;;;1732:2;1717:18;;;1704:32;;553:1189;-1:-1:-1;;;;553:1189:26:o;1747:607::-;1859:4;1888:2;1917;1906:9;1899:21;1949:6;1943:13;1992:6;1987:2;1976:9;1972:18;1965:34;2017:1;2027:140;2041:6;2038:1;2035:13;2027:140;;;2136:14;;;2132:23;;2126:30;2102:17;;;2121:2;2098:26;2091:66;2056:10;;2027:140;;;2031:3;2216:1;2211:2;2202:6;2191:9;2187:22;2183:31;2176:42;2345:2;2275:66;2270:2;2262:6;2258:15;2254:88;2243:9;2239:104;2235:113;2227:121;;;;1747:607;;;;:::o;2359:184::-;2411:77;2408:1;2401:88;2508:4;2505:1;2498:15;2532:4;2529:1;2522:15;2548:163;2615:20;;2675:10;2664:22;;2654:33;;2644:61;;2701:1;2698;2691:12;2644:61;2548:163;;;:::o;2716:956::-;2801:6;2854:3;2842:9;2833:7;2829:23;2825:33;2822:53;;;2871:1;2868;2861:12;2822:53;2904:2;2898:9;2946:3;2938:6;2934:16;3016:6;3004:10;3001:22;2980:18;2968:10;2965:34;2962:62;2959:242;;;3057:77;3054:1;3047:88;3158:4;3155:1;3148:15;3186:4;3183:1;3176:15;2959:242;3217:2;3210:22;3256:28;3274:9;3256:28;:::i;:::-;3248:6;3241:44;3318:37;3351:2;3340:9;3336:18;3318:37;:::i;:::-;3313:2;3305:6;3301:15;3294:62;3389:37;3422:2;3411:9;3407:18;3389:37;:::i;:::-;3384:2;3376:6;3372:15;3365:62;3460:37;3493:2;3482:9;3478:18;3460:37;:::i;:::-;3455:2;3447:6;3443:15;3436:62;3548:3;3537:9;3533:19;3520:33;3562:39;3595:5;3562:39;:::i;:::-;3629:3;3617:16;;3610:31;3621:6;2716:956;-1:-1:-1;;;2716:956:26:o;3867:184::-;3937:6;3990:2;3978:9;3969:7;3965:23;3961:32;3958:52;;;4006:1;4003;3996:12;3958:52;-1:-1:-1;4029:16:26;;3867:184;-1:-1:-1;3867:184:26:o;4056:::-;4108:77;4105:1;4098:88;4205:4;4202:1;4195:15;4229:4;4226:1;4219:15;4245:175;4313:10;4356;;;4344;;;4340:27;;4379:12;;;4376:38;;;4394:18;;:::i;:::-;4376:38;4245:175;;;;:::o;4425:125::-;4490:9;;;4511:10;;;4508:36;;;4524:18;;:::i;:::-;4425:125;;;;:::o;4745:128::-;4812:9;;;4833:11;;;4830:37;;;4847:18;;:::i;4878:184::-;4936:6;4989:2;4977:9;4968:7;4964:23;4960:32;4957:52;;;5005:1;5002;4995:12;4957:52;5028:28;5046:9;5028:28;:::i;:::-;5018:38;4878:184;-1:-1:-1;;;4878:184:26:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "sayMyName()": "e2523a69",
+    "takeYourTurn(address,(uint32,uint32,uint32,uint32,address)[],uint256[],uint256)": "96647448"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"sayMyName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract Monaco\",\"name\":\"monaco\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint32\",\"name\":\"balance\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"speed\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"shield\",\"type\":\"uint32\"},{\"internalType\":\"contract ICar\",\"name\":\"car\",\"type\":\"address\"}],\"internalType\":\"struct Monaco.CarData[]\",\"name\":\"allCars\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"ourCarIndex\",\"type\":\"uint256\"}],\"name\":\"takeYourTurn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/cars/ExampleCar.sol\":\"ExampleCar\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/solmate/src/utils/SafeCastLib.sol\":{\"keccak256\":\"0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427\",\"dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk\"]},\"src/Monaco.sol\":{\"keccak256\":\"0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23\",\"dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS\"]},\"src/cars/ExampleCar.sol\":{\"keccak256\":\"0xa5b9e59617aa91ce8a11986592df9b878b3cbfc610c195d5c8b9a3e1f7223c78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://db2a94820b8ce93a15bd8e2dba96c670a111cdd5ff37ca5af004858544d17953\",\"dweb:/ipfs/QmYWDdNfJRhbXhSSNnfuqLZgz7x3h5Z8feXPQt1azAXHdg\"]},\"src/interfaces/ICar.sol\":{\"keccak256\":\"0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718\",\"dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE\"]},\"src/utils/SignedWadMath.sol\":{\"keccak256\":\"0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77\",\"dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "sayMyName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract Monaco",
+              "name": "monaco",
+              "type": "address"
+            },
+            {
+              "internalType": "struct Monaco.CarData[]",
+              "name": "allCars",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "balance",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "speed",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "y",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "shield",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "contract ICar",
+                  "name": "car",
+                  "type": "address"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ourCarIndex",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "takeYourTurn"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/cars/ExampleCar.sol": "ExampleCar"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/solmate/src/utils/SafeCastLib.sol": {
+        "keccak256": "0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab",
+        "urls": [
+          "bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427",
+          "dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk"
+        ],
+        "license": "AGPL-3.0-only"
+      },
+      "src/Monaco.sol": {
+        "keccak256": "0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929",
+        "urls": [
+          "bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23",
+          "dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS"
+        ],
+        "license": "MIT"
+      },
+      "src/cars/ExampleCar.sol": {
+        "keccak256": "0xa5b9e59617aa91ce8a11986592df9b878b3cbfc610c195d5c8b9a3e1f7223c78",
+        "urls": [
+          "bzz-raw://db2a94820b8ce93a15bd8e2dba96c670a111cdd5ff37ca5af004858544d17953",
+          "dweb:/ipfs/QmYWDdNfJRhbXhSSNnfuqLZgz7x3h5Z8feXPQt1azAXHdg"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/ICar.sol": {
+        "keccak256": "0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35",
+        "urls": [
+          "bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718",
+          "dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE"
+        ],
+        "license": "MIT"
+      },
+      "src/utils/SignedWadMath.sol": {
+        "keccak256": "0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72",
+        "urls": [
+          "bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77",
+          "dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/cars/ExampleCar.sol",
+    "id": 27615,
+    "exportedSymbols": {
+      "ExampleCar": [
+        27614
+      ],
+      "ICar": [
+        28836
+      ],
+      "Monaco": [
+        27478
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1487:18",
+    "nodes": [
+      {
+        "id": 27480,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:18",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 27481,
+        "nodeType": "ImportDirective",
+        "src": "57:34:18",
+        "nodes": [],
+        "absolutePath": "src/interfaces/ICar.sol",
+        "file": "./../interfaces/ICar.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 27615,
+        "sourceUnit": 28837,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 27614,
+        "nodeType": "ContractDefinition",
+        "src": "93:1425:18",
+        "nodes": [
+          {
+            "id": 27605,
+            "nodeType": "FunctionDefinition",
+            "src": "127:1288:18",
+            "nodes": [],
+            "body": {
+              "id": 27604,
+              "nodeType": "Block",
+              "src": "270:1145:18",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    27503
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 27503,
+                      "mutability": "mutable",
+                      "name": "ourCar",
+                      "nameLocation": "302:6:18",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 27604,
+                      "src": "280:28:18",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                        "typeString": "struct Monaco.CarData"
+                      },
+                      "typeName": {
+                        "id": 27502,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 27501,
+                          "name": "Monaco.CarData",
+                          "nameLocations": [
+                            "280:6:18",
+                            "287:7:18"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 25989,
+                          "src": "280:14:18"
+                        },
+                        "referencedDeclaration": 25989,
+                        "src": "280:14:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CarData_$25989_storage_ptr",
+                          "typeString": "struct Monaco.CarData"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 27507,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 27504,
+                      "name": "allCars",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27490,
+                      "src": "311:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                        "typeString": "struct Monaco.CarData calldata[] calldata"
+                      }
+                    },
+                    "id": 27506,
+                    "indexExpression": {
+                      "id": 27505,
+                      "name": "ourCarIndex",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27495,
+                      "src": "319:11:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "311:20:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CarData_$25989_calldata_ptr",
+                      "typeString": "struct Monaco.CarData calldata"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "280:51:18"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 27514,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 27508,
+                        "name": "ourCar",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27503,
+                        "src": "410:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                          "typeString": "struct Monaco.CarData memory"
+                        }
+                      },
+                      "id": 27509,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "417:7:18",
+                      "memberName": "balance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 25979,
+                      "src": "410:14:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "arguments": [
+                        {
+                          "hexValue": "33",
+                          "id": 27512,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "452:1:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_3_by_1",
+                            "typeString": "int_const 3"
+                          },
+                          "value": "3"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_3_by_1",
+                            "typeString": "int_const 3"
+                          }
+                        ],
+                        "expression": {
+                          "id": 27510,
+                          "name": "monaco",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27486,
+                          "src": "427:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Monaco_$27478",
+                            "typeString": "contract Monaco"
+                          }
+                        },
+                        "id": 27511,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "434:17:18",
+                        "memberName": "getAccelerateCost",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 26997,
+                        "src": "427:24:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                          "typeString": "function (uint256) view external returns (uint256)"
+                        }
+                      },
+                      "id": 27513,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "427:27:18",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "410:44:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 27527,
+                  "nodeType": "IfStatement",
+                  "src": "406:101:18",
+                  "trueBody": {
+                    "expression": {
+                      "id": 27525,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "expression": {
+                          "id": 27515,
+                          "name": "ourCar",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27503,
+                          "src": "456:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                            "typeString": "struct Monaco.CarData memory"
+                          }
+                        },
+                        "id": 27517,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": true,
+                        "memberLocation": "463:7:18",
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 25979,
+                        "src": "456:14:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "-=",
+                      "rightHandSide": {
+                        "arguments": [
+                          {
+                            "arguments": [
+                              {
+                                "hexValue": "33",
+                                "id": 27522,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "504:1:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_3_by_1",
+                                  "typeString": "int_const 3"
+                                },
+                                "value": "3"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_3_by_1",
+                                  "typeString": "int_const 3"
+                                }
+                              ],
+                              "expression": {
+                                "id": 27520,
+                                "name": "monaco",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 27486,
+                                "src": "481:6:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Monaco_$27478",
+                                  "typeString": "contract Monaco"
+                                }
+                              },
+                              "id": 27521,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "488:15:18",
+                              "memberName": "buyAcceleration",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 26457,
+                              "src": "481:22:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                "typeString": "function (uint256) external returns (uint256)"
+                              }
+                            },
+                            "id": 27523,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "481:25:18",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 27519,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "474:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint24_$",
+                            "typeString": "type(uint24)"
+                          },
+                          "typeName": {
+                            "id": 27518,
+                            "name": "uint24",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "474:6:18",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 27524,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "474:33:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint24",
+                          "typeString": "uint24"
+                        }
+                      },
+                      "src": "456:51:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 27526,
+                    "nodeType": "ExpressionStatement",
+                    "src": "456:51:18"
+                  }
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 27541,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 27533,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 27530,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 27528,
+                          "name": "ourCarIndex",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27495,
+                          "src": "521:11:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "+",
+                        "rightExpression": {
+                          "hexValue": "31",
+                          "id": 27529,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "535:1:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "521:15:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "expression": {
+                          "id": 27531,
+                          "name": "allCars",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27490,
+                          "src": "540:7:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                            "typeString": "struct Monaco.CarData calldata[] calldata"
+                          }
+                        },
+                        "id": 27532,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "548:6:18",
+                        "memberName": "length",
+                        "nodeType": "MemberAccess",
+                        "src": "540:14:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "521:33:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "&&",
+                    "rightExpression": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 27540,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "expression": {
+                          "id": 27534,
+                          "name": "ourCar",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 27503,
+                          "src": "558:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                            "typeString": "struct Monaco.CarData memory"
+                          }
+                        },
+                        "id": 27535,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "565:7:18",
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 25979,
+                        "src": "558:14:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": ">",
+                      "rightExpression": {
+                        "arguments": [
+                          {
+                            "hexValue": "31",
+                            "id": 27538,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "600:1:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            }
+                          ],
+                          "expression": {
+                            "id": 27536,
+                            "name": "monaco",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 27486,
+                            "src": "575:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Monaco_$27478",
+                              "typeString": "contract Monaco"
+                            }
+                          },
+                          "id": 27537,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "582:17:18",
+                          "memberName": "getSuperShellCost",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 27069,
+                          "src": "575:24:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (uint256) view external returns (uint256)"
+                          }
+                        },
+                        "id": 27539,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "575:27:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "558:44:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "521:81:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "commonType": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "id": 27569,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 27561,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 27551,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 27549,
+                            "name": "ourCarIndex",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 27495,
+                            "src": "794:11:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "!=",
+                          "rightExpression": {
+                            "hexValue": "30",
+                            "id": 27550,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "809:1:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "794:16:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          "id": 27560,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "baseExpression": {
+                                "id": 27552,
+                                "name": "allCars",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 27490,
+                                "src": "814:7:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                                  "typeString": "struct Monaco.CarData calldata[] calldata"
+                                }
+                              },
+                              "id": 27556,
+                              "indexExpression": {
+                                "commonType": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                "id": 27555,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "id": 27553,
+                                  "name": "ourCarIndex",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 27495,
+                                  "src": "822:11:18",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "-",
+                                "rightExpression": {
+                                  "hexValue": "31",
+                                  "id": 27554,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "836:1:18",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1_by_1",
+                                    "typeString": "int_const 1"
+                                  },
+                                  "value": "1"
+                                },
+                                "src": "822:15:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "814:24:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_CarData_$25989_calldata_ptr",
+                                "typeString": "struct Monaco.CarData calldata"
+                              }
+                            },
+                            "id": 27557,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "839:5:18",
+                            "memberName": "speed",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 25981,
+                            "src": "814:30:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint32",
+                              "typeString": "uint32"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">",
+                          "rightExpression": {
+                            "expression": {
+                              "id": 27558,
+                              "name": "ourCar",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 27503,
+                              "src": "847:6:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                                "typeString": "struct Monaco.CarData memory"
+                              }
+                            },
+                            "id": 27559,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "854:5:18",
+                            "memberName": "speed",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 25981,
+                            "src": "847:12:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint32",
+                              "typeString": "uint32"
+                            }
+                          },
+                          "src": "814:45:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "794:65:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "&&",
+                      "rightExpression": {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 27568,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 27562,
+                            "name": "ourCar",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 27503,
+                            "src": "863:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                              "typeString": "struct Monaco.CarData memory"
+                            }
+                          },
+                          "id": 27563,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "870:7:18",
+                          "memberName": "balance",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 25979,
+                          "src": "863:14:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "hexValue": "31",
+                              "id": 27566,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "900:1:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              }
+                            ],
+                            "expression": {
+                              "id": 27564,
+                              "name": "monaco",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 27486,
+                              "src": "880:6:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Monaco_$27478",
+                                "typeString": "contract Monaco"
+                              }
+                            },
+                            "id": 27565,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "887:12:18",
+                            "memberName": "getShellCost",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 27033,
+                            "src": "880:19:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                              "typeString": "function (uint256) view external returns (uint256)"
+                            }
+                          },
+                          "id": 27567,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "880:22:18",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "863:39:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "src": "794:108:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "condition": {
+                        "commonType": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        },
+                        "id": 27580,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 27577,
+                            "name": "ourCar",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 27503,
+                            "src": "1143:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                              "typeString": "struct Monaco.CarData memory"
+                            }
+                          },
+                          "id": 27578,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1150:6:18",
+                          "memberName": "shield",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 25985,
+                          "src": "1143:13:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 27579,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1160:1:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "1143:18:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "id": 27601,
+                      "nodeType": "IfStatement",
+                      "src": "1139:270:18",
+                      "trueBody": {
+                        "id": 27600,
+                        "nodeType": "Block",
+                        "src": "1162:247:18",
+                        "statements": [
+                          {
+                            "condition": {
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "id": 27591,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "commonType": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                "id": 27583,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "id": 27581,
+                                  "name": "ourCarIndex",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 27495,
+                                  "src": "1286:11:18",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "==",
+                                "rightExpression": {
+                                  "hexValue": "30",
+                                  "id": 27582,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1301:1:18",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  },
+                                  "value": "0"
+                                },
+                                "src": "1286:16:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "&&",
+                              "rightExpression": {
+                                "commonType": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                "id": 27590,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "expression": {
+                                    "id": 27584,
+                                    "name": "ourCar",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 27503,
+                                    "src": "1306:6:18",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_CarData_$25989_memory_ptr",
+                                      "typeString": "struct Monaco.CarData memory"
+                                    }
+                                  },
+                                  "id": 27585,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "1313:7:18",
+                                  "memberName": "balance",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 25979,
+                                  "src": "1306:14:18",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint32",
+                                    "typeString": "uint32"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": ">",
+                                "rightExpression": {
+                                  "arguments": [
+                                    {
+                                      "hexValue": "31",
+                                      "id": 27588,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "kind": "number",
+                                      "lValueRequested": false,
+                                      "nodeType": "Literal",
+                                      "src": "1344:1:18",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_rational_1_by_1",
+                                        "typeString": "int_const 1"
+                                      },
+                                      "value": "1"
+                                    }
+                                  ],
+                                  "expression": {
+                                    "argumentTypes": [
+                                      {
+                                        "typeIdentifier": "t_rational_1_by_1",
+                                        "typeString": "int_const 1"
+                                      }
+                                    ],
+                                    "expression": {
+                                      "id": 27586,
+                                      "name": "monaco",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 27486,
+                                      "src": "1323:6:18",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_contract$_Monaco_$27478",
+                                        "typeString": "contract Monaco"
+                                      }
+                                    },
+                                    "id": 27587,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberLocation": "1330:13:18",
+                                    "memberName": "getShieldCost",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 27125,
+                                    "src": "1323:20:18",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                                      "typeString": "function (uint256) view external returns (uint256)"
+                                    }
+                                  },
+                                  "id": 27589,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "kind": "functionCall",
+                                  "lValueRequested": false,
+                                  "nameLocations": [],
+                                  "names": [],
+                                  "nodeType": "FunctionCall",
+                                  "src": "1323:23:18",
+                                  "tryCall": false,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "src": "1306:40:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "src": "1286:60:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "id": 27599,
+                            "nodeType": "IfStatement",
+                            "src": "1282:117:18",
+                            "trueBody": {
+                              "id": 27598,
+                              "nodeType": "Block",
+                              "src": "1347:52:18",
+                              "statements": [
+                                {
+                                  "expression": {
+                                    "arguments": [
+                                      {
+                                        "hexValue": "31",
+                                        "id": 27595,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": true,
+                                        "kind": "number",
+                                        "lValueRequested": false,
+                                        "nodeType": "Literal",
+                                        "src": "1382:1:18",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_rational_1_by_1",
+                                          "typeString": "int_const 1"
+                                        },
+                                        "value": "1"
+                                      }
+                                    ],
+                                    "expression": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_rational_1_by_1",
+                                          "typeString": "int_const 1"
+                                        }
+                                      ],
+                                      "expression": {
+                                        "id": 27592,
+                                        "name": "monaco",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 27486,
+                                        "src": "1365:6:18",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_contract$_Monaco_$27478",
+                                          "typeString": "contract Monaco"
+                                        }
+                                      },
+                                      "id": 27594,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberLocation": "1372:9:18",
+                                      "memberName": "buyShield",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": 26961,
+                                      "src": "1365:16:18",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                        "typeString": "function (uint256) external returns (uint256)"
+                                      }
+                                    },
+                                    "id": 27596,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "kind": "functionCall",
+                                    "lValueRequested": false,
+                                    "nameLocations": [],
+                                    "names": [],
+                                    "nodeType": "FunctionCall",
+                                    "src": "1365:19:18",
+                                    "tryCall": false,
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "id": 27597,
+                                  "nodeType": "ExpressionStatement",
+                                  "src": "1365:19:18"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "id": 27602,
+                    "nodeType": "IfStatement",
+                    "src": "790:619:18",
+                    "trueBody": {
+                      "id": 27576,
+                      "nodeType": "Block",
+                      "src": "904:229:18",
+                      "statements": [
+                        {
+                          "expression": {
+                            "arguments": [
+                              {
+                                "hexValue": "31",
+                                "id": 27573,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "1057:1:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_1_by_1",
+                                  "typeString": "int_const 1"
+                                },
+                                "value": "1"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_1_by_1",
+                                  "typeString": "int_const 1"
+                                }
+                              ],
+                              "expression": {
+                                "id": 27570,
+                                "name": "monaco",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 27486,
+                                "src": "1041:6:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Monaco_$27478",
+                                  "typeString": "contract Monaco"
+                                }
+                              },
+                              "id": 27572,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1048:8:18",
+                              "memberName": "buyShell",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 26689,
+                              "src": "1041:15:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                                "typeString": "function (uint256) external returns (uint256)"
+                              }
+                            },
+                            "id": 27574,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1041:18:18",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 27575,
+                          "nodeType": "ExpressionStatement",
+                          "src": "1041:18:18"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 27603,
+                  "nodeType": "IfStatement",
+                  "src": "518:891:18",
+                  "trueBody": {
+                    "id": 27548,
+                    "nodeType": "Block",
+                    "src": "603:181:18",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "hexValue": "31",
+                              "id": 27545,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "710:1:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              }
+                            ],
+                            "expression": {
+                              "id": 27542,
+                              "name": "monaco",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 27486,
+                              "src": "689:6:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Monaco_$27478",
+                                "typeString": "contract Monaco"
+                              }
+                            },
+                            "id": 27544,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "696:13:18",
+                            "memberName": "buySuperShell",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 26835,
+                            "src": "689:20:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                              "typeString": "function (uint256) external returns (uint256)"
+                            }
+                          },
+                          "id": 27546,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "689:23:18",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 27547,
+                        "nodeType": "ExpressionStatement",
+                        "src": "689:23:18"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "baseFunctions": [
+              28835
+            ],
+            "functionSelector": "96647448",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "takeYourTurn",
+            "nameLocation": "136:12:18",
+            "overrides": {
+              "id": 27497,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "261:8:18"
+            },
+            "parameters": {
+              "id": 27496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27486,
+                  "mutability": "mutable",
+                  "name": "monaco",
+                  "nameLocation": "156:6:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27605,
+                  "src": "149:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Monaco_$27478",
+                    "typeString": "contract Monaco"
+                  },
+                  "typeName": {
+                    "id": 27485,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 27484,
+                      "name": "Monaco",
+                      "nameLocations": [
+                        "149:6:18"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 27478,
+                      "src": "149:6:18"
+                    },
+                    "referencedDeclaration": 27478,
+                    "src": "149:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Monaco_$27478",
+                      "typeString": "contract Monaco"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27490,
+                  "mutability": "mutable",
+                  "name": "allCars",
+                  "nameLocation": "190:7:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27605,
+                  "src": "164:33:18",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct Monaco.CarData[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 27488,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 27487,
+                        "name": "Monaco.CarData",
+                        "nameLocations": [
+                          "164:6:18",
+                          "171:7:18"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 25989,
+                        "src": "164:14:18"
+                      },
+                      "referencedDeclaration": 25989,
+                      "src": "164:14:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CarData_$25989_storage_ptr",
+                        "typeString": "struct Monaco.CarData"
+                      }
+                    },
+                    "id": 27489,
+                    "nodeType": "ArrayTypeName",
+                    "src": "164:16:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_CarData_$25989_storage_$dyn_storage_ptr",
+                      "typeString": "struct Monaco.CarData[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27493,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27605,
+                  "src": "199:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 27491,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "199:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 27492,
+                    "nodeType": "ArrayTypeName",
+                    "src": "199:9:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27495,
+                  "mutability": "mutable",
+                  "name": "ourCarIndex",
+                  "nameLocation": "239:11:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27605,
+                  "src": "231:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 27494,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "148:103:18"
+            },
+            "returnParameters": {
+              "id": 27498,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "270:0:18"
+            },
+            "scope": 27614,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 27613,
+            "nodeType": "FunctionDefinition",
+            "src": "1421:95:18",
+            "nodes": [],
+            "body": {
+              "id": 27612,
+              "nodeType": "Block",
+              "src": "1480:36:18",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "4578616d706c65436172",
+                    "id": 27610,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1497:12:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_3166db73d1155825f9b236ab5ec5114051912e9793aa4718a20576f9085994e6",
+                      "typeString": "literal_string \"ExampleCar\""
+                    },
+                    "value": "ExampleCar"
+                  },
+                  "functionReturnParameters": 27609,
+                  "id": 27611,
+                  "nodeType": "Return",
+                  "src": "1490:19:18"
+                }
+              ]
+            },
+            "baseFunctions": [
+              28820
+            ],
+            "functionSelector": "e2523a69",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sayMyName",
+            "nameLocation": "1430:9:18",
+            "parameters": {
+              "id": 27606,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1439:2:18"
+            },
+            "returnParameters": {
+              "id": 27609,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27608,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27613,
+                  "src": "1465:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27607,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1465:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1464:15:18"
+            },
+            "scope": 27614,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 27482,
+              "name": "ICar",
+              "nameLocations": [
+                "116:4:18"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 28836,
+              "src": "116:4:18"
+            },
+            "id": 27483,
+            "nodeType": "InheritanceSpecifier",
+            "src": "116:4:18"
+          }
+        ],
+        "canonicalName": "ExampleCar",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          27614,
+          28836
+        ],
+        "name": "ExampleCar",
+        "nameLocation": "102:10:18",
+        "scope": 27615,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 18
+}

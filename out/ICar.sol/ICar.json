@@ -1,0 +1,521 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "sayMyName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract Monaco",
+          "name": "monaco",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "balance",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "speed",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "y",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "shield",
+              "type": "uint32"
+            },
+            {
+              "internalType": "contract ICar",
+              "name": "car",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Monaco.CarData[]",
+          "name": "allCars",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "bananas",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "yourCarIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "takeYourTurn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "sayMyName()": "e2523a69",
+    "takeYourTurn(address,(uint32,uint32,uint32,uint32,address)[],uint256[],uint256)": "96647448"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"sayMyName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract Monaco\",\"name\":\"monaco\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint32\",\"name\":\"balance\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"speed\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"shield\",\"type\":\"uint32\"},{\"internalType\":\"contract ICar\",\"name\":\"car\",\"type\":\"address\"}],\"internalType\":\"struct Monaco.CarData[]\",\"name\":\"allCars\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"bananas\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"yourCarIndex\",\"type\":\"uint256\"}],\"name\":\"takeYourTurn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ICar.sol\":\"ICar\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/solmate/src/utils/SafeCastLib.sol\":{\"keccak256\":\"0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427\",\"dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk\"]},\"src/Monaco.sol\":{\"keccak256\":\"0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23\",\"dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS\"]},\"src/interfaces/ICar.sol\":{\"keccak256\":\"0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718\",\"dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE\"]},\"src/utils/SignedWadMath.sol\":{\"keccak256\":\"0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77\",\"dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "sayMyName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract Monaco",
+              "name": "monaco",
+              "type": "address"
+            },
+            {
+              "internalType": "struct Monaco.CarData[]",
+              "name": "allCars",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "balance",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "speed",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "y",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "shield",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "contract ICar",
+                  "name": "car",
+                  "type": "address"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "bananas",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yourCarIndex",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "takeYourTurn"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/interfaces/ICar.sol": "ICar"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/solmate/src/utils/SafeCastLib.sol": {
+        "keccak256": "0xb784a14411858036491124e677aecde6d500e695b7a70c74aa8f1001bda2ccab",
+        "urls": [
+          "bzz-raw://7610da561fe84b893cb46410acdf9e56c204029a21cb717c11cde33ed4354427",
+          "dweb:/ipfs/QmQ7LyNz9V48ox4BgncCpvqq4LcDFwqz9q3CTrsrLmdPrk"
+        ],
+        "license": "AGPL-3.0-only"
+      },
+      "src/Monaco.sol": {
+        "keccak256": "0xd1eaa05fe00b2c1429fdb1f565844a27d9422b734987419e390c400c99993929",
+        "urls": [
+          "bzz-raw://f7ba316f27ecfcfa5d8cc70a334d930ac68726548bddb535efe613cf6df99e23",
+          "dweb:/ipfs/QmbizosqUMFy2gPgWEUYcG9SjyjfpA33yx4X5nUH1QdXjS"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/ICar.sol": {
+        "keccak256": "0x5942c9f3e85f4c86168d23c5674e957eb2fb33e4cb934cccc2d672573f734a35",
+        "urls": [
+          "bzz-raw://5f212579f503579319391b3d16203d0b22f44c47fd2f42fa2278093f4ad05718",
+          "dweb:/ipfs/QmVzhvE12XMwb3MP5RPL9FEh4kWC36pSPzsxN6Nv3wgTiE"
+        ],
+        "license": "MIT"
+      },
+      "src/utils/SignedWadMath.sol": {
+        "keccak256": "0xceb33c70492dbf5590c9840b709b32b8284d687ac283a932f0622db28c3bfe72",
+        "urls": [
+          "bzz-raw://319e4b99628a09e6eb1d6cfad5a549bd4b862354129dedf39118461889eccd77",
+          "dweb:/ipfs/Qmbu2RJDAckizshkwr78xGu1nKGKhKxm2CAkayLcxybsm5"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ICar.sol",
+    "id": 28837,
+    "exportedSymbols": {
+      "ICar": [
+        28836
+      ],
+      "Monaco": [
+        27478
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:268:21",
+    "nodes": [
+      {
+        "id": 28814,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:21",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 28815,
+        "nodeType": "ImportDirective",
+        "src": "57:23:21",
+        "nodes": [],
+        "absolutePath": "src/Monaco.sol",
+        "file": "../Monaco.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 28837,
+        "sourceUnit": 27479,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 28836,
+        "nodeType": "ContractDefinition",
+        "src": "82:218:21",
+        "nodes": [
+          {
+            "id": 28820,
+            "nodeType": "FunctionDefinition",
+            "src": "103:59:21",
+            "nodes": [],
+            "functionSelector": "e2523a69",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sayMyName",
+            "nameLocation": "112:9:21",
+            "parameters": {
+              "id": 28816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "121:2:21"
+            },
+            "returnParameters": {
+              "id": 28819,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28818,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28820,
+                  "src": "147:13:21",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 28817,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:6:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:15:21"
+            },
+            "scope": 28836,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28835,
+            "nodeType": "FunctionDefinition",
+            "src": "167:131:21",
+            "nodes": [],
+            "functionSelector": "96647448",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "takeYourTurn",
+            "nameLocation": "176:12:21",
+            "parameters": {
+              "id": 28833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28823,
+                  "mutability": "mutable",
+                  "name": "monaco",
+                  "nameLocation": "196:6:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28835,
+                  "src": "189:13:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Monaco_$27478",
+                    "typeString": "contract Monaco"
+                  },
+                  "typeName": {
+                    "id": 28822,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 28821,
+                      "name": "Monaco",
+                      "nameLocations": [
+                        "189:6:21"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 27478,
+                      "src": "189:6:21"
+                    },
+                    "referencedDeclaration": 27478,
+                    "src": "189:6:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Monaco_$27478",
+                      "typeString": "contract Monaco"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28827,
+                  "mutability": "mutable",
+                  "name": "allCars",
+                  "nameLocation": "230:7:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28835,
+                  "src": "204:33:21",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_CarData_$25989_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct Monaco.CarData[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 28825,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 28824,
+                        "name": "Monaco.CarData",
+                        "nameLocations": [
+                          "204:6:21",
+                          "211:7:21"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 25989,
+                        "src": "204:14:21"
+                      },
+                      "referencedDeclaration": 25989,
+                      "src": "204:14:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CarData_$25989_storage_ptr",
+                        "typeString": "struct Monaco.CarData"
+                      }
+                    },
+                    "id": 28826,
+                    "nodeType": "ArrayTypeName",
+                    "src": "204:16:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_CarData_$25989_storage_$dyn_storage_ptr",
+                      "typeString": "struct Monaco.CarData[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28830,
+                  "mutability": "mutable",
+                  "name": "bananas",
+                  "nameLocation": "258:7:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28835,
+                  "src": "239:26:21",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 28828,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "239:7:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 28829,
+                    "nodeType": "ArrayTypeName",
+                    "src": "239:9:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28832,
+                  "mutability": "mutable",
+                  "name": "yourCarIndex",
+                  "nameLocation": "275:12:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28835,
+                  "src": "267:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28831,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "267:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "188:100:21"
+            },
+            "returnParameters": {
+              "id": 28834,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "297:0:21"
+            },
+            "scope": 28836,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICar",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          28836
+        ],
+        "name": "ICar",
+        "nameLocation": "92:4:21",
+        "scope": 28837,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 21
+}
